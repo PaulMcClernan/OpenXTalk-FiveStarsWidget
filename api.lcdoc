@@ -1,0 +1,19 @@
+Library: com.livecode.widget.fivestar
+
+Type: widget
+
+Description: This widget is a Five Star Rating widget with 10 states (half stars).
+
+Name: amountStars
+
+Type: message
+
+Syntax: set the amountStars
+
+Summary: Set the position of fill to [ 0.0, 0.5, 1.0,… 4.5, 5.5 ]
+
+Example: 	set the amountStars of me to 3.5
+
+Description: Set the amount to fill in 0.5 increments [ 0.0, 0.5, 1.0,… 4.5, 5.5 ]
+
+
