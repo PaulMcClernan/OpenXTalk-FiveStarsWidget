@@ -78,8 +78,8 @@ public handler OnCreate()
 	"M109.3,26.4l-8.6-6.2l-8.6,6.2l3.3-10.1l-8.6-6.2h10.6L100.8,0l3.3,10.1h10.6l-8.6,6.2L109.3,26.4z M100.8,19l6.7,4.9 l-2.6-7.9l6.7-4.9h-8.3l-2.6-7.9l-2.6,7.9h-8.3l6.7,4.9l-2.6,7.9L100.8,19z" & \
 	"M138.1,26.4l-8.6-6.2l-8.6,6.2l3.3-10.1l-8.6-6.2h10.6L129.6,0l3.3,10.1h10.6l-8.6,6.2L138.1,26.4z M129.6,19l6.7,4.9 l-2.6-7.9l6.7-4.9h-8.3l-2.6-7.9l-2.6,7.9h-8.3l6.7,4.9l-2.6,7.9L129.6,19z" into mPath
 	
-	put color [0,0,0] into mColor
-	put stringToColor("255,255,0") into mHiliteColor
+	put color [255,0,0] into mColor
+	put stringToColor("127,0,0") into mHiliteColor
 	put 0 into mAngle
 	
 	put false into mHilited
