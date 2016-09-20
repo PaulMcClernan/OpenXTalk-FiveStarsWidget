@@ -1,2 +1,4 @@
 # livecode.widget.fivestars
-Five-Star Rating graphical control for LiveCode, the english-like programming language for the rest of us!
+Five-Star rating system LiveCode Builder Widget has 10 states (half-stars).
+
+
