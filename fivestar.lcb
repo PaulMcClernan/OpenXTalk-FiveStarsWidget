@@ -1,6 +1,6 @@
 /*
 Copyright (C) 2015-2016 Paul G. McClernan.
-Permission granted for use and modifications in open-source projects only. 
+Permission granted for use and modifications in open-source projects only.
 Spread the knowledge!
 */
 
@@ -9,7 +9,7 @@ This widget is a Five Star Rating widget with 10 states (half stars).
 
 Name: amountOfStars
 Type: property
-Syntax: set the amountOfStars
+sYntax: set the amountOfStars
 Summary: Set the position of fill to [ 0.0, 0.5, 1.0, ... 4.5, 5.0 ]
 
 Example:
@@ -64,8 +64,6 @@ property toggleHilite         get mToggleHilite     set mToggleHilite
 property maintainAspectRatio  get mMaintainAspectRatio  set setMaintainAspectRatio
 property flipVertically       get mFlipVertically       set setFlipVertically
 property iconAngle			  get mAngle       set setAngle
---
-
 ----------
 -- called when widget is created
 public handler OnCreate()
@@ -75,20 +73,20 @@ public handler OnCreate()
 	"M22.9,26.4l-8.6-6.2l-8.6,6.2L9,16.3l-8.6-6.2h10.6L14.4,0l3.3,10.1h10.6l-8.6,6.2L22.9,26.4z M14.4,19l6.7,4.9L18.5,16 l6.7-4.9h-8.3l-2.6-7.9l-2.6,7.9H3.5l6.7,4.9l-2.6,7.9L14.4,19z" & \
 	"M109.3,26.4l-8.6-6.2l-8.6,6.2l3.3-10.1l-8.6-6.2h10.6L100.8,0l3.3,10.1h10.6l-8.6,6.2L109.3,26.4z M100.8,19l6.7,4.9 l-2.6-7.9l6.7-4.9h-8.3l-2.6-7.9l-2.6,7.9h-8.3l6.7,4.9l-2.6,7.9L100.8,19z" & \
 	"M138.1,26.4l-8.6-6.2l-8.6,6.2l3.3-10.1l-8.6-6.2h10.6L129.6,0l3.3,10.1h10.6l-8.6,6.2L138.1,26.4z M129.6,19l6.7,4.9 l-2.6-7.9l6.7-4.9h-8.3l-2.6-7.9l-2.6,7.9h-8.3l6.7,4.9l-2.6,7.9L129.6,19z" into mPath
-	
+
 	put color [255,0,0] into mColor
 	put stringToColor("127,0,0") into mHiliteColor
 	put 0 into mAngle
-	
+
 	put false into mHilited
 	put false into mToggleHilite
 	put true into mMaintainAspectRatio
 	put false into mFlipVertically
-	
+
 	variable tArray as Array
 	put the empty array into tArray
 	put the empty list into mPresets
-	
+
 	put "0" into tArray["name"]
 	put "M80.5,26.4L72,20.2l-8.6,6.2l3.3-10.1l-8.6-6.2h10.6L72,0l3.3,10.1h10.6l-8.6,6.2L80.5,26.4z M72,19l6.7,4.9L76.1,16 l6.7-4.9h-8.3L72,3.2l-2.6,7.9h-8.3l6.7,4.9l-2.6,7.9L72,19z" & \
 	"M51.7,26.4l-8.6-6.2l-8.6,6.2l3.3-10.1l-8.6-6.2h10.6L43.2,0l3.3,10.1H57l-8.6,6.2L51.7,26.4z M43.2,19l6.7,4.9L47.3,16 l6.7-4.9h-8.3l-2.6-7.9l-2.6,7.9h-8.3L39,16l-2.6,7.9L43.2,19z" & \
@@ -96,7 +94,7 @@ public handler OnCreate()
 	"M109.3,26.4l-8.6-6.2l-8.6,6.2l3.3-10.1l-8.6-6.2h10.6L100.8,0l3.3,10.1h10.6l-8.6,6.2L109.3,26.4z M100.8,19l6.7,4.9 l-2.6-7.9l6.7-4.9h-8.3l-2.6-7.9l-2.6,7.9h-8.3l6.7,4.9l-2.6,7.9L100.8,19z" & \
 	"M138.1,26.4l-8.6-6.2l-8.6,6.2l3.3-10.1l-8.6-6.2h10.6L129.6,0l3.3,10.1h10.6l-8.6,6.2L138.1,26.4z M129.6,19l6.7,4.9 l-2.6-7.9l6.7-4.9h-8.3l-2.6-7.9l-2.6,7.9h-8.3l6.7,4.9l-2.6,7.9L129.6,19z" into tArray["path"]
 	push tArray onto mPresets
-	
+
 	put "0.5" into tArray["name"]
 	put "M19.7,16.3l8.6-6.2h0H17.6L14.4,0l0,0l0,0l-3.3,10.1H0.5h0L9,16.3L5.7,26.4l0,0l0,0l8.6-6.2l8.6,6.2l0,0l0,0L19.7,16.3z M25.2,11.1L18.5,16l2.5,7.8L14.4,19V3.3l2.5,7.8h0H25.2z" &\
 	"M80.5,26.4L72,20.2l-8.6,6.2l3.3-10.1l-8.6-6.2h10.6L72,0l3.3,10.1h10.6l-8.6,6.2L80.5,26.4z M72,19l6.7,4.9L76.1,16 l6.7-4.9h-8.3L72,3.2l-2.6,7.9h-8.3l6.7,4.9l-2.6,7.9L72,19z" &\
@@ -104,7 +102,7 @@ public handler OnCreate()
 	"M109.3,26.4l-8.6-6.2l-8.6,6.2l3.3-10.1l-8.6-6.2h10.6L100.8,0l3.3,10.1h10.6l-8.6,6.2L109.3,26.4z M100.8,19l6.7,4.9 l-2.6-7.9l6.7-4.9h-8.3l-2.6-7.9l-2.6,7.9h-8.3l6.7,4.9l-2.6,7.9L100.8,19z"&\
 	"M138.1,26.4l-8.6-6.2l-8.6,6.2l3.3-10.1l-8.6-6.2h10.6L129.6,0l3.3,10.1h10.6l-8.6,6.2L138.1,26.4z M129.6,19l6.7,4.9 l-2.6-7.9l6.7-4.9h-8.3l-2.6-7.9l-2.6,7.9h-8.3l6.7,4.9l-2.6,7.9L129.6,19z" into tArray["path"]
 	push tArray onto mPresets
-	
+
 	put "1.0" into tArray["name"]
 	put "M28.2,10.1H17.6L14.4,0l-3.3,10.1H0.5L9,16.3L5.8,26.4l8.6-6.2l8.6,6.2l-3.3-10.1L28.2,10.1z"&\
 	"M80.5,26.4L72,20.2l-8.6,6.2l3.3-10.1l-8.6-6.2h10.6L72,0l3.3,10.1h10.6l-8.6,6.2L80.5,26.4z M72,19l6.7,4.9L76.1,16 l6.7-4.9h-8.3L72,3.2l-2.6,7.9h-8.3l6.7,4.9l-2.6,7.9L72,19z"&\
@@ -112,7 +110,7 @@ public handler OnCreate()
 	"M109.3,26.4l-8.6-6.2l-8.6,6.2l3.3-10.1l-8.6-6.2h10.6L100.8,0l3.3,10.1h10.6l-8.6,6.2L109.3,26.4z M100.8,19l6.7,4.9 l-2.6-7.9l6.7-4.9h-8.3l-2.6-7.9l-2.6,7.9h-8.3l6.7,4.9l-2.6,7.9L100.8,19z"&\
 	"M138.1,26.4l-8.6-6.2l-8.6,6.2l3.3-10.1l-8.6-6.2h10.6L129.6,0l3.3,10.1h10.6l-8.6,6.2L138.1,26.4z M129.6,19l6.7,4.9 l-2.6-7.9l6.7-4.9h-8.3l-2.6-7.9l-2.6,7.9h-8.3l6.7,4.9l-2.6,7.9L129.6,19z" into tArray["path"]
 	push tArray onto mPresets
-	
+
 	put "1.5" into tArray["name"]
 	put "M48.5,16.3l8.6-6.2h0H46.4L43.2,0l0,0l0,0l-3.3,10.1H29.3h0l8.6,6.2l-3.3,10.1l0,0l0,0l8.6-6.2l8.6,6.2l0,0l0,0L48.5,16.3z M54,11.1L47.3,16l2.5,7.8L43.2,19V3.3l2.5,7.8h0H54z"&\
 	"M28.2,10.1H17.6L14.4,0l-3.3,10.1H0.5L9,16.3L5.8,26.4l8.6-6.2l8.6,6.2l-3.3-10.1L28.2,10.1z"&\
@@ -120,7 +118,7 @@ public handler OnCreate()
 	"M109.3,26.4l-8.6-6.2l-8.6,6.2l3.3-10.1l-8.6-6.2h10.6L100.8,0l3.3,10.1h10.6l-8.6,6.2L109.3,26.4z M100.8,19l6.7,4.9 l-2.6-7.9l6.7-4.9h-8.3l-2.6-7.9l-2.6,7.9h-8.3l6.7,4.9l-2.6,7.9L100.8,19z"&\
 	"M138.1,26.4l-8.6-6.2l-8.6,6.2l3.3-10.1l-8.6-6.2h10.6L129.6,0l3.3,10.1h10.6l-8.6,6.2L138.1,26.4z M129.6,19l6.7,4.9 l-2.6-7.9l6.7-4.9h-8.3l-2.6-7.9l-2.6,7.9h-8.3l6.7,4.9l-2.6,7.9L129.6,19z" into tArray["path"]
 	push tArray onto mPresets
-	
+
 	put "2.0" into tArray["name"]
 	put "M28.2,10.1H17.6L14.4,0l-3.3,10.1H0.5L9,16.3L5.8,26.4l8.6-6.2l8.6,6.2l-3.3-10.1L28.2,10.1z"&\
 	"M57,10.1H46.4L43.2,0l-3.3,10.1H29.3l8.6,6.2l-3.3,10.1l8.6-6.2l8.6,6.2l-3.3-10.1L57,10.1z"&\
@@ -128,7 +126,7 @@ public handler OnCreate()
 	"M109.3,26.4l-8.6-6.2l-8.6,6.2l3.3-10.1l-8.6-6.2h10.6L100.8,0l3.3,10.1h10.6l-8.6,6.2L109.3,26.4z M100.8,19l6.7,4.9 l-2.6-7.9l6.7-4.9h-8.3l-2.6-7.9l-2.6,7.9h-8.3l6.7,4.9l-2.6,7.9L100.8,19z"&\
 	"M138.1,26.4l-8.6-6.2l-8.6,6.2l3.3-10.1l-8.6-6.2h10.6L129.6,0l3.3,10.1h10.6l-8.6,6.2L138.1,26.4z M129.6,19l6.7,4.9 l-2.6-7.9l6.7-4.9h-8.3l-2.6-7.9l-2.6,7.9h-8.3l6.7,4.9l-2.6,7.9L129.6,19z" into tArray["path"]
 	push tArray onto mPresets
-	
+
 	put "2.5" into tArray["name"]
 	put "M28.2,10.1H17.6L14.4,0l-3.3,10.1H0.5L9,16.3L5.8,26.4l8.6-6.2l8.6,6.2l-3.3-10.1L28.2,10.1z"&\
 	"M57,10.1H46.4L43.2,0l-3.3,10.1H29.3l8.6,6.2l-3.3,10.1l8.6-6.2l8.6,6.2l-3.3-10.1L57,10.1z"&\
@@ -136,7 +134,7 @@ public handler OnCreate()
 	"M138.1,26.4l-8.6-6.2l-8.6,6.2l3.3-10.1l-8.6-6.2h10.6L129.6,0l3.3,10.1h10.6l-8.6,6.2L138.1,26.4z M129.6,19l6.7,4.9 l-2.6-7.9l6.7-4.9h-8.3l-2.6-7.9l-2.6,7.9h-8.3l6.7,4.9l-2.6,7.9L129.6,19z"&\
 	"M77.3,16.3l8.6-6.2h0H75.3L72,0l0,0l0,0l-3.3,10.1H58.1h0l8.6,6.2l-3.3,10.1l0,0l0,0l8.6-6.2l8.6,6.2l0,0l0,0L77.3,16.3z M82.8,11.1L76.1,16l2.5,7.8L72,19V3.3l2.5,7.8h0H82.8z" into tArray["path"]
 	push tArray onto mPresets
-	
+
 	put "3.0" into tArray["name"]
 	put "M28.2,10.1H17.6L14.4,0l-3.3,10.1H0.5L9,16.3L5.8,26.4l8.6-6.2l8.6,6.2l-3.3-10.1L28.2,10.1z"&\
 	"M57,10.1H46.4L43.2,0l-3.3,10.1H29.3l8.6,6.2l-3.3,10.1l8.6-6.2l8.6,6.2l-3.3-10.1L57,10.1z"&\
@@ -144,7 +142,7 @@ public handler OnCreate()
 	"M109.3,26.4l-8.6-6.2l-8.6,6.2l3.3-10.1l-8.6-6.2h10.6L100.8,0l3.3,10.1h10.6l-8.6,6.2L109.3,26.4z M100.8,19l6.7,4.9 l-2.6-7.9l6.7-4.9h-8.3l-2.6-7.9l-2.6,7.9h-8.3l6.7,4.9l-2.6,7.9L100.8,19z"&\
 	"M138.1,26.4l-8.6-6.2l-8.6,6.2l3.3-10.1l-8.6-6.2h10.6L129.6,0l3.3,10.1h10.6l-8.6,6.2L138.1,26.4z M129.6,19l6.7,4.9 l-2.6-7.9l6.7-4.9h-8.3l-2.6-7.9l-2.6,7.9h-8.3l6.7,4.9l-2.6,7.9L129.6,19z" into tArray["path"]
 	push tArray onto mPresets
-	
+
 	put "3.5" into tArray["name"]
 	put "M28.2,10.1H17.6L14.4,0l-3.3,10.1H0.5L9,16.3L5.8,26.4l8.6-6.2l8.6,6.2l-3.3-10.1L28.2,10.1z"&\
 	"M57,10.1H46.4L43.2,0l-3.3,10.1H29.3l8.6,6.2l-3.3,10.1l8.6-6.2l8.6,6.2l-3.3-10.1L57,10.1z"&\
@@ -152,7 +150,7 @@ public handler OnCreate()
 	"M138.1,26.4l-8.6-6.2l-8.6,6.2l3.3-10.1l-8.6-6.2h10.6L129.6,0l3.3,10.1h10.6l-8.6,6.2L138.1,26.4z M129.6,19l6.7,4.9 l-2.6-7.9l6.7-4.9h-8.3l-2.6-7.9l-2.6,7.9h-8.3l6.7,4.9l-2.6,7.9L129.6,19z"&\
 	"M106.1,16.3l8.6-6.2h0H104L100.8,0l0,0l0,0l-3.3,10.1H86.9h0l8.6,6.2l-3.3,10.1l0,0l0,0l8.6-6.2l8.6,6.2l0,0l0,0 L106.1,16.3z M111.6,11.1l-6.7,4.9l2.5,7.8l-6.7-4.8V3.3l2.5,7.8h0H111.6z" into tArray["path"]
 	push tArray onto mPresets
-	
+
 	put "4.0" into tArray["name"]
 	put "M28.2,10.1H17.6L14.4,0l-3.3,10.1H0.5L9,16.3L5.8,26.4l8.6-6.2l8.6,6.2l-3.3-10.1L28.2,10.1z"&\
 	"M57,10.1H46.4L43.2,0l-3.3,10.1H29.3l8.6,6.2l-3.3,10.1l8.6-6.2l8.6,6.2l-3.3-10.1L57,10.1z"&\
@@ -160,7 +158,7 @@ public handler OnCreate()
 	"M114.6,10.1H104L100.8,0l-3.3,10.1H86.9l8.6,6.2l-3.3,10.1l8.6-6.2l8.6,6.2l-3.3-10.1L114.6,10.1z"&\
 	"M138.1,26.4l-8.6-6.2l-8.6,6.2l3.3-10.1l-8.6-6.2h10.6L129.6,0l3.3,10.1h10.6l-8.6,6.2L138.1,26.4z M129.6,19l6.7,4.9 l-2.6-7.9l6.7-4.9h-8.3l-2.6-7.9l-2.6,7.9h-8.3l6.7,4.9l-2.6,7.9L129.6,19z" into tArray["path"]
 	push tArray onto mPresets
-	
+
 	put "4.5" into tArray["name"]
 	put "M28.2,10.1H17.6L14.4,0l-3.3,10.1H0.5L9,16.3L5.8,26.4l8.6-6.2l8.6,6.2l-3.3-10.1L28.2,10.1z"&\
 	"M57,10.1H46.4L43.2,0l-3.3,10.1H29.3l8.6,6.2l-3.3,10.1l8.6-6.2l8.6,6.2l-3.3-10.1L57,10.1z"&\
@@ -168,7 +166,7 @@ public handler OnCreate()
 	"M114.6,10.1H104L100.8,0l-3.3,10.1H86.9l8.6,6.2l-3.3,10.1l8.6-6.2l8.6,6.2l-3.3-10.1L114.6,10.1z"&\
 	"M134.9,16.3l8.6-6.2h0h-10.6L129.6,0l0,0l0,0l-3.3,10.1h-10.6h0l8.6,6.2l-3.3,10.1l0,0l0,0l8.6-6.2l8.6,6.2l0,0l0,0 L134.9,16.3z M140.4,11.1l-6.7,4.9l2.5,7.8l-6.7-4.8V3.3l2.5,7.8h0H140.4z" into tArray["path"]
 	push tArray onto mPresets
-	
+
 	put "5.0" into tArray["name"]
 	put "M28.2,10.1H17.6L14.4,0l-3.3,10.1H0.5L9,16.3L5.8,26.4l8.6-6.2l8.6,6.2l-3.3-10.1L28.2,10.1z"&\
 	"M57,10.1H46.4L43.2,0l-3.3,10.1H29.3l8.6,6.2l-3.3,10.1l8.6-6.2l8.6,6.2l-3.3-10.1L57,10.1z"&\
@@ -176,16 +174,13 @@ public handler OnCreate()
 	"M114.6,10.1H104L100.8,0l-3.3,10.1H86.9l8.6,6.2l-3.3,10.1l8.6-6.2l8.6,6.2l-3.3-10.1L114.6,10.1z"&\
 	"M143.4,10.1h-10.6L129.6,0l-3.3,10.1h-10.6l8.6,6.2L121,26.4l8.6-6.2l8.6,6.2l-3.3-10.1L143.4,10.1z" into tArray["path"]
 	push tArray onto mPresets
-	
-	
-	end handler
-----------
 
+end handler
 ----------
 -- this handler is called when the widget is saved
 public handler OnSave(out rProperties as Array)
 	put the empty array into rProperties
-	
+
 	put mPath into rProperties["svg path"]
 	put colorToString(mColor, true) into rProperties["color"]
 	put colorToString(mHiliteColor, true) into rProperties["hilite color"]
@@ -194,11 +189,9 @@ public handler OnSave(out rProperties as Array)
 	put mMaintainAspectRatio into rProperties["maintain aspect ratio"]
 	put mFlipVertically into rProperties["flip vertically"]
 	put mAngle into rProperties["angle"]
-	
+
 	return rProperties
 end handler
-----------
-
 ----------
 -- this handler is called when the widget is loaded
 public handler OnLoad(in pProperties as Array)
@@ -212,15 +205,12 @@ public handler OnLoad(in pProperties as Array)
 	put pProperties["angle"] into mAngle
 end handler
 ----------
-
-----------
--- the following handlers deal with mouse events
-public handler OnMouseUp()		
+public handler OnMouseUp()
   if the current mouse position is within my bounds then
   	if mToggleHilite then
 	  	put not mHilited into mHilited
   	end if
-   
+
  	---	if the click button is 1 then
 	--- variable tClickLoc as Point
 	--- put the click position into tClickLoc
@@ -255,7 +245,7 @@ end handler
 public handler OnMouseDown()
 	put "down" into mState
 	redraw all
-	
+
 	post "mouseDown" to my script object with [FormatInt(the click button)]
 end handler
 ----------
@@ -332,38 +322,36 @@ public handler setAngle(in pAngle as Number) returns nothing
 	redraw all
 end handler
 
-
-----------
 -- called whenever LiveCode needs to redraw the widget
 public handler OnPaint()
 	variable tPath as Path
 	put path mPath into tPath
-	
-	variable tBounds	
+
+	variable tBounds
 	if mFlipVertically then
 		scale tPath by [1,-1]
 		translate tPath by [0, the height of the bounding box of tPath]
 	end if
-	
+
 	if mAngle > 0 then
 		rotate tPath by mAngle
 		log the instructions of tPath
 	end if
-		
+
 	// scale to fit within widget and maintain aspect ratio
 	if mMaintainAspectRatio then
-		transform tPath by scaleAndMaintainAspectRatioTransform(the bounding box of tPath, my bounds)		
+		transform tPath by scaleAndMaintainAspectRatioTransform(the bounding box of tPath, my bounds)
 	else
 		scale tPath by [my width / the width of the bounding box of tPath, \
 			my height / the height of the bounding box of tPath]
 	end if
-		
+
 	if mState is "up" and mHilited is false then
 		set the paint of this canvas to solid paint with mColor
 	else
 		set the paint of this canvas to solid paint with mHiliteColor
 	end if
-	
+
 	fill tPath on this canvas
 end handler
 
@@ -372,69 +360,66 @@ end handler
 private handler scaleAndMaintainAspectRatioTransform(in pSrcBounds as Rectangle, in pDestBounds as Rectangle) returns Transform
 	// Prepare values for matrix transformation
 	variable isLarger as Boolean
-	variable sx as Number
-	variable sy as Number
-	
+	variable sX as Number
+	variable sY as Number
+
 	put false into isLarger
-	put the width of pDestBounds / the width of pSrcBounds into sx
-	put the height of pDestBounds / the height of pSrcBounds into sy
-	
-	if sx > sy then
+	put the width of pDestBounds / the width of pSrcBounds into sX
+	put the height of pDestBounds / the height of pSrcBounds into sY
+
+	if sX > sY then
 		put true into isLarger
-		put sy into sx
+		put sY into sX
 	else
-		put sx into sy
+		put sX into sY
 	end if
-	
-	variable tx as Number
+
+	variable tX as Number
 	variable ty as Number
-	
-	put the left of pDestBounds - (the left of pSrcBounds*sx) into tx
-	put the top of pDestBounds - (the top of pSrcBounds*sy) into ty
-	
+
+	put the left of pDestBounds - (the left of pSrcBounds*sX) into tX
+	put the top of pDestBounds - (the top of pSrcBounds*sY) into ty
+
 	variable diff as Number
-	
+
 	if isLarger then
-		put my width - (the width of pSrcBounds*sy) into diff
+		put my width - (the width of pSrcBounds*sY) into diff
 	else
-		put my height - (the height of pSrcBounds*sy) into diff
+		put my height - (the height of pSrcBounds*sY) into diff
 	end if
-	
+
 	// align center
 	divide diff by 2
-	
+
 	if isLarger then
-		add diff to tx
+		add diff to tX
 	else
 		add diff to ty
 	end if
-	
+
 	// create transformation matrix and apply
 	variable tTransform as Transform
-	put transform with matrix [sx, 0, 0, sy, tx, ty] into tTransform
-	
+	put transform with matrix [sX, 0, 0, sY, tX, ty] into tTransform
+
 	return tTransform
 end handler
 
 
 private handler colorToString(in pColor as Color, in pIncludeAlpha as Boolean) returns String
 	variable tColor as String
-	
 	put FormatInt(the rounded of ((the red of pColor) * 255)) into tColor
 	put "," & FormatInt(the rounded of ((the green of pColor) * 255)) after tColor
 	put "," & FormatInt(the rounded of ((the blue of pColor) * 255)) after tColor
-	
 	if pIncludeAlpha then
 		put "," & FormatInt(the rounded of ((the alpha of pColor) * 255)) after tColor
 	end if
-	
 	return tColor
 end handler
 
 private handler stringToColor(in pString as String) returns Color
 	if the number of chars in pString is 0 then
 		return ""
-		end if
+	end if
 
 	variable tRed as Real
 	variable tGreen as Real
