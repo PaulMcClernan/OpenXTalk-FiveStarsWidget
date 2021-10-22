@@ -1,4 +1,4 @@
-# livecode.widget.fivestars
-Five-Star rating system LiveCode Builder Widget has 10 states (half-stars).
+# OpenXTalk Five Stars Widget
+OXT Five Stars widget is GUI element meant for ratings system, it actually has 10 states (half-stars).
 
 
