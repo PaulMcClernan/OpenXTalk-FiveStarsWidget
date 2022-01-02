@@ -20,7 +20,7 @@ Sets the amount to fill in 0.5 increments [ 0.0, 0.5, 1.0, ... 4.5, 5.0 ]
 */
 
 -- declaring extension as widget, followed by identifier
-widget community.livecode.widget.fivestar
+widget org.openxtalk.widget.fivestar
 
 -- dependancy declarations
 use com.livecode.canvas
