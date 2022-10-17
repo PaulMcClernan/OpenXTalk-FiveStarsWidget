@@ -1,19 +1,32 @@
-Library: com.livecode.widget.fivestar
+Library: org.openxtalk.widget.fivestar
 
 Type: widget
 
-Description: This widget is a Five Star Rating widget with 10 states (half stars).
+Summary: This widget is a Five Star Rating widget with 10 states (half stars).
 
-Name: amountStars
+author: Paul McClernan
+
+version: 1.0.2
+
+Name: mouseDown
 
 Type: message
 
-Syntax: set the amountStars
+Example:
+on mouseDown
+   set the amountStars of me to (the amountStars of me)+0.5
+end mouseDown
 
-Summary: Set the position of fill to [ 0.0, 0.5, 1.0,… 4.5, 5.5 ]
+Name: amountOfStars
 
-Example: 	set the amountStars of me to 3.5
+Type: property
 
-Description: Set the amount to fill in 0.5 increments [ 0.0, 0.5, 1.0,… 4.5, 5.5 ]
+Syntax: set the amountOfStars
+
+Summary: Set the position of fill to [ 0.0, 0.5, 1.0, ... 4.5, 5.0 ]
+
+Example: set the amountStars of me to 3.5
+
+Description: Sets the amount to fill in 0.5 increments [ 0.0, 0.5, 1.0, ... 4.5, 5.0 ]
 
 

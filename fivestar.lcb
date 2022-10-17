@@ -7,6 +7,19 @@ Spread the knowledge!
 /**
 This widget is a Five Star Rating widget with 10 states (half stars).
 
+Name: mouseDown
+Type: message
+Example:
+on mouseDown
+	if the amountStars of me is 5.0 then
+		set the the amountStars of me to 0
+		exit to top
+	else
+   	set the amountStars of me to (the amountStars of me) + 0.5
+	end if
+end mouseDown
+
+
 Name: amountOfStars
 Type: property
 sYntax: set the amountOfStars
@@ -31,8 +44,9 @@ use com.livecode.library.widgetutils
 -- adding metadata to ensure the extension displays correctly in livecode
 metadata title is "FiveStar"
 metadata author is "Paul McClernan"
-metadata version is "1.0.1"
+metadata version is "1.0.2"
 metadata preferredSize is "144,26"
+metadata svgicon is "M28.2,10.1H17.6L14.4,0l-3.3,10.1H0.5L9,16.3L5.8,26.4l8.6-6.2l8.6,6.2l-3.3-10.1L28.2,10.1z M57,10.1H46.4L43.2,0l-3.3,10.1H29.3l8.6,6.2l-3.3,10.1l8.6-6.2l8.6,6.2l-3.3-10.1L57,10.1z M85.9,10.1H75.3L72,0l-3.3,10.1H58.1l8.6,6.2l-3.3,10.1l8.6-6.2l8.6,6.2l-3.3-10.1L85.9,10.1z M138.1,26.4l-8.6-6.2l-8.6,6.2l3.3-10.1l-8.6-6.2h10.6L129.6,0l3.3,10.1h10.6l-8.6,6.2L138.1,26.4z M129.6,19l6.7,4.9 l-2.6-7.9l6.7-4.9h-8.3l-2.6-7.9l-2.6,7.9h-8.3l6.7,4.9l-2.6,7.9L129.6,19z M106.1,16.3l8.6-6.2h0H104L100.8,0l0,0l0,0l-3.3,10.1H86.9h0l8.6,6.2l-3.3,10.1l0,0l0,0l8.6-6.2l8.6,6.2l0,0l0,0 L106.1,16.3z M111.6,11.1l-6.7,4.9l2.5,7.8l-6.7-4.8V3.3l2.5,7.8h0H111.6z"
 
 private variable mState        as String
 private variable mColor        as Color
@@ -65,6 +79,7 @@ property maintainAspectRatio  get mMaintainAspectRatio  set setMaintainAspectRat
 property flipVertically       get mFlipVertically       set setFlipVertically
 property iconAngle			  get mAngle       set setAngle
 ----------
+
 -- called when widget is created
 public handler OnCreate()
 	put "up" into mState
@@ -210,7 +225,6 @@ public handler OnMouseUp()
   	if mToggleHilite then
 	  	put not mHilited into mHilited
   	end if
-
  	---	if the click button is 1 then
 	--- variable tClickLoc as Point
 	--- put the click position into tClickLoc
@@ -227,7 +241,6 @@ public handler OnMouseUp()
 	---		redraw all
 	--—		end if
 	--- end if
-
      post "mouseUp" to my script object with [FormatInt(the click button)] -- formatint needed until dp-2
   end if
 
@@ -375,31 +388,31 @@ private handler scaleAndMaintainAspectRatioTransform(in pSrcBounds as Rectangle,
 	end if
 
 	variable tX as Number
-	variable ty as Number
+	variable tY as Number
 
 	put the left of pDestBounds - (the left of pSrcBounds*sX) into tX
-	put the top of pDestBounds - (the top of pSrcBounds*sY) into ty
+	put the top of pDestBounds - (the top of pSrcBounds*sY) into tY
 
-	variable diff as Number
+	variable tDiff as Number
 
 	if isLarger then
-		put my width - (the width of pSrcBounds*sY) into diff
+		put my width - (the width of pSrcBounds*sY) into tDiff
 	else
-		put my height - (the height of pSrcBounds*sY) into diff
+		put my height - (the height of pSrcBounds*sY) into tDiff
 	end if
 
 	// align center
-	divide diff by 2
+	divide tDiff by 2
 
 	if isLarger then
-		add diff to tX
+		add tDiff to tX
 	else
-		add diff to ty
+		add tDiff to tY
 	end if
 
 	// create transformation matrix and apply
 	variable tTransform as Transform
-	put transform with matrix [sX, 0, 0, sY, tX, ty] into tTransform
+	put transform with matrix [sX, 0, 0, sY, tX, tY] into tTransform
 
 	return tTransform
 end handler

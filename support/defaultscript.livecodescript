@@ -1,11 +1,10 @@
-script "com.livecode.widget.fivestar.__DefaultScript"
---
+script "org.openxtalk.widget.fivestar.__DefaultScript"
 on mouseDown
    local tAmountStars
    put 0.0 into tAmountStars
    put (item 1 of the clickloc ) - ( the left of me) into starPickLoc
    put trunc( the width of me / 10 ) into halfStarAmnt
-   switch 
+   switch
       case starPickLoc < halfStarAmnt
          put 0.5 into tAmountStars
          break
@@ -46,10 +45,10 @@ on mouseDown
    set the numberformat to 0.0
    repeat until the mouse is "up"
       get the mouseLoc
-      if item 1 of it > ((item 1 of theStartLoc)+moveTolerance) then 
+      if item 1 of it > ((item 1 of theStartLoc)+moveTolerance) then
          put it into theStartLoc
          add 0.5 to tAmountStars
-         if tAmountStars >= 5 then 
+         if tAmountStars >= 5 then
             put 5.0 into tAmountStars
          end if
          set the amountOfStars of me to tAmountStars
@@ -57,7 +56,7 @@ on mouseDown
       if item 1 of it < ((item 1 of theStartLoc)-moveTolerance) then
          put it into theStartLoc
          subtract 0.5 from tAmountStars
-         if tAmountStars <= 0 then 
+         if tAmountStars <= 0 then
             put 0 into tAmountStars
          end if
          set the amountOfStars of me to tAmountStars

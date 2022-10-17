@@ -1,0 +1,55 @@
+<package version="0.0">
+  <name>org.openxtalk.widget.fivestar</name>
+  <title>FiveStars</title>
+  <author>Paul McClernan</author>
+  <version>1.0.2</version>
+  <license>community</license>
+  <type>widget</type>
+  <requires name="com.livecode.canvas"/>
+  <requires name="com.livecode.binary"/>
+  <requires name="com.livecode.list"/>
+  <requires name="com.livecode.string"/>
+  <requires name="com.livecode.array"/>
+  <requires name="com.livecode.widget"/>
+  <requires name="com.livecode.logic"/>
+  <requires name="com.livecode.engine"/>
+  <requires name="com.livecode.arithmetic"/>
+  <requires name="com.livecode.type"/>
+  <requires name="com.livecode.mathfoundation"/>
+  <requires name="com.livecode.char"/>
+  <requires name="com.livecode.typeconvert"/>
+  <requires name="com.livecode.byte"/>
+  <metadata key="preferredSize">144,26</metadata>
+  <metadata key="svgicon">M28.2,10.1H17.6L14.4,0l-3.3,10.1H0.5L9,16.3L5.8,26.4l8.6-6.2l8.6,6.2l-3.3-10.1L28.2,10.1z M57,10.1H46.4L43.2,0l-3.3,10.1H29.3l8.6,6.2l-3.3,10.1l8.6-6.2l8.6,6.2l-3.3-10.1L57,10.1z M85.9,10.1H75.3L72,0l-3.3,10.1H58.1l8.6,6.2l-3.3,10.1l8.6-6.2l8.6,6.2l-3.3-10.1L85.9,10.1z M138.1,26.4l-8.6-6.2l-8.6,6.2l3.3-10.1l-8.6-6.2h10.6L129.6,0l3.3,10.1h10.6l-8.6,6.2L138.1,26.4z M129.6,19l6.7,4.9 l-2.6-7.9l6.7-4.9h-8.3l-2.6-7.9l-2.6,7.9h-8.3l6.7,4.9l-2.6,7.9L129.6,19z M106.1,16.3l8.6-6.2h0H104L100.8,0l0,0l0,0l-3.3,10.1H86.9h0l8.6,6.2l-3.3,10.1l0,0l0,0l8.6-6.2l8.6,6.2l0,0l0,0 L106.1,16.3z M111.6,11.1l-6.7,4.9l2.5,7.8l-6.7-4.8V3.3l2.5,7.8h0H111.6z</metadata>
+  <property name="iconColor" get="string" set="string"/>
+  <metadata key="iconColor.editor">com.livecode.pi.color</metadata>
+  <property name="iconHiliteColor" get="string" set="string"/>
+  <metadata key="iconHiliteColor.editor">com.livecode.pi.color</metadata>
+  <property name="amountOfStars" get="string" set="string"/>
+  <metadata key="amountOfStars.editor">com.livecode.pi.enum</metadata>
+  <metadata key="amountOfStars.options">0,0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0</metadata>
+  <metadata key="amountOfStars.default">0</metadata>
+  <property name="isHilited" get="boolean" set="boolean"/>
+  <property name="toggleHilite" get="boolean" set="boolean"/>
+  <property name="maintainAspectRatio" get="boolean" set="boolean"/>
+  <property name="flipVertically" get="boolean" set="boolean"/>
+  <property name="iconAngle" get="real" set="number"/>
+  <handler name="OnCreate" parameters="" return="any"/>
+  <handler name="OnSave" parameters="out array" return="any"/>
+  <handler name="OnLoad" parameters="in array" return="any"/>
+  <handler name="OnMouseUp" parameters="" return="any"/>
+  <handler name="OnMouseCancel" parameters="" return="any"/>
+  <handler name="OnMouseDown" parameters="" return="any"/>
+  <handler name="setIsHilited" parameters="in boolean" return="any"/>
+  <handler name="setMaintainAspectRatio" parameters="in boolean" return="any"/>
+  <handler name="setFlipVertically" parameters="in boolean" return="any"/>
+  <handler name="setPath" parameters="in string" return="nothing"/>
+  <handler name="setColor" parameters="in string" return="nothing"/>
+  <handler name="getColor" parameters="" return="string"/>
+  <handler name="setHiliteColor" parameters="in string" return="nothing"/>
+  <handler name="getHiliteColor" parameters="" return="string"/>
+  <handler name="setPathPreset" parameters="in string" return="nothing"/>
+  <handler name="getPathPreset" parameters="" return="string"/>
+  <handler name="setAngle" parameters="in number" return="nothing"/>
+  <handler name="OnPaint" parameters="" return="any"/>
+</package>
