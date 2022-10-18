@@ -9,7 +9,7 @@ This widget is a Five Star Rating widget with 10 states (half stars).
 
 Name: mouseDown
 Type: message
-Example:
+Syntax:
 on mouseDown
 	if the amountStars of me is 5.0 then
 		set the the amountStars of me to 0
@@ -22,7 +22,7 @@ end mouseDown
 
 Name: amountOfStars
 Type: property
-sYntax: set the amountOfStars
+Syntax: set the amountOfStars
 Summary: Set the position of fill to [ 0.0, 0.5, 1.0, ... 4.5, 5.0 ]
 
 Example:
